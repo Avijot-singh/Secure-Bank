@@ -1,7 +1,7 @@
 import datetime
 import re
 
-class Signup:
+class SignuPage:
     emails = []
     account_number = 11001101
     
@@ -37,10 +37,10 @@ class Signup:
             email = input("Please Enter your Email:  ")
             if not re.match(email_pattern, email):
                 print("Invalid email format. Please enter a valid email address.")
-            elif email in Signup.emails:
+            elif email in SignuPage.emails:
                 print("This email is already in use. Please login or use another email.")
             else:
-                Signup.emails.append(email)
+                SignuPage.emails.append(email)
                 return email
     
     

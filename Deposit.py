@@ -1,11 +1,10 @@
 #Deposit Page
-class Deposit:
+class DepositPage:
 
     def __init__(self):
         self.balance = 0
-
-    print("Welcome to Deposit Page")
-    print("---------------------------")
+        print("Welcome to Deposit Page")
+        print("---------------------------")
 
 
     def Deposit_Cash(self):
@@ -24,5 +23,3 @@ class Deposit:
                     print("Please enter value in postive integer again")
             else:
                 print("Please Enter a number value")
-deposit_page = Deposit()
-deposit_page.Deposit_Cash()
