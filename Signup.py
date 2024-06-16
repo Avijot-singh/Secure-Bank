@@ -10,6 +10,9 @@ class SignuPage:
         self.Lname = self.get_name("last")
         self.DOB = self.get_dob()
         self.Email = self.get_email()
+        self.password = self.password_check()
+        self.account_number = Signup.account_number
+        Signup.account_number += 1
 
     def get_name(self, name_type):
         while True:
@@ -41,11 +44,27 @@ class SignuPage:
                 return email
     
     
+    def password_check(self):
+        reg = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!#%*?&]{6,10}$" # reg is the regex pattern used for validation of the password using the set conditions
+        pat = re.compile(reg) #Compiles the regex pattern into a regex object for better performance.
+        while True:
+            password = input("Please enter the Password you want to set:(1 UPPERCASE, 1 lowercase, 1 digit and a special character, min 6 and max 10)")
+            mat = re.search(pat, password) #Searches the password for a match to the compiled regex pattern pat.
+            if mat:
+                print("Password Set")
+                return password
+            else:
+                print("Invalid Password")
+
+            
     def details(self):
-        print("First Name:", self.Fname)
-        print("Last Name:", self.Lname)
-        print("Date Of Birth:", self.DOB)
-        print("Email:", self.Email)
+        print("Hey, ", self.Fname, self.Lname, "Your Account has been set up and your Account Number is :", self.account_number, ", Next time please use your email and password to login into your account.")
 
 # Create an instance of Signup to test the input
+new_signup1 = Signup()
+new_signup1.details()
 
+
+
+
+    
