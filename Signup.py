@@ -11,8 +11,8 @@ class SignuPage:
         self.DOB = self.get_dob()
         self.Email = self.get_email()
         self.password = self.password_check()
-        self.account_number = Signup.account_number
-        Signup.account_number += 1
+        self.account_number = SignuPage.account_number
+        SignuPage.account_number += 1
 
     def get_name(self, name_type):
         while True:
@@ -61,7 +61,7 @@ class SignuPage:
         print("Hey, ", self.Fname, self.Lname, "Your Account has been set up and your Account Number is :", self.account_number, ", Next time please use your email and password to login into your account.")
 
 # Create an instance of Signup to test the input
-new_signup1 = Signup()
+new_signup1 = SignuPage()
 new_signup1.details()
 
 
