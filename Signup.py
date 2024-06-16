@@ -1,7 +1,7 @@
 import datetime
 import re
 
-class Signup:
+class SignuPage:
     emails = []
     account_number = 11001101
     
@@ -48,5 +48,5 @@ class Signup:
         print("Email:", self.Email)
 
 # Create an instance of Signup to test the input
-new_signup = Signup()
+new_signup = SignuPage()
 new_signup.details()

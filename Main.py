@@ -1,22 +1,29 @@
-from Deposit import Deposit
-class Main:
-    def main_In():
-        
-            print("Welcome to the Banking System")
-            print("------------------------------")
-    while(True):
+from Deposit import DepositPage # Syntax | from FileName import classname
+from Login import LoginPage
+class MainPage:
+    @staticmethod
+    def main_In():        
+        print("Welcome to the Banking System")
+        print("------------------------------")
+
+        while(True):
             print("Are you a new or existing user?")
             print("1.New")
             print("2.Existing")
             try:
                 option = int(input("Option: "))
                 if(option == 1):
-                    
-                    break
+                    log = LoginPage()
+                    log.verification()
+                    MainPage.Menu_option()
+
+                # Please add signup here        
             except ValueError:
                 print("Please Enter a Number Value")
-
-    while(True):
+                
+    @staticmethod
+    def Menu_option():        
+        while(True):
             print("Please Select from below options: ")
             print("1.   Deposit")
             print("2.   Withdraw")
@@ -25,11 +32,11 @@ class Main:
             try:
                 user = int(input("Option: "))
                 if(user == 1):
-                    dep = Deposit()
+                    dep = DepositPage()
                     dep.Deposit_Cash()
                     break
             except ValueError:
                 print("Please Enter a Number Value")
                 
 
-Main.main_In()
+MainPage.main_In()
