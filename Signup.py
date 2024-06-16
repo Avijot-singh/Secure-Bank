@@ -48,7 +48,8 @@ class SignuPage:
         reg = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!#%*?&]{6,10}$" # reg is the regex pattern used for validation of the password using the set conditions
         pat = re.compile(reg) #Compiles the regex pattern into a regex object for better performance.
         while True:
-            password = input("Please enter the Password you want to set:(1 UPPERCASE, 1 lowercase, 1 digit and a special character, min 6 and max 10)")
+            print("\n (1 UPPERCASE, 1 lowercase, 1 digit and a special character, min 6 and max 10)")
+            password = input("Please enter the Password you want to set: ")
             mat = re.search(pat, password) #Searches the password for a match to the compiled regex pattern pat.
             if mat:
                 print("Password Set")
@@ -63,6 +64,8 @@ class SignuPage:
 # Create an instance of Signup to test the input
 new_signup1 = SignuPage()
 new_signup1.details()
+
+
 
 
 
