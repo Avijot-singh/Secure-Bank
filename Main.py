@@ -1,4 +1,4 @@
-
+from Deposit import Deposit
 class Main:
     def main_In():
         
@@ -11,7 +11,7 @@ class Main:
             try:
                 option = int(input("Option: "))
                 if(option == 1):
-                    print([[Signp.py ]])
+                    
                     break
             except ValueError:
                 print("Please Enter a Number Value")
@@ -25,7 +25,8 @@ class Main:
             try:
                 user = int(input("Option: "))
                 if(user == 1):
-                    print("Deposit Method")
+                    dep = Deposit()
+                    dep.Deposit_Cash()
                     break
             except ValueError:
                 print("Please Enter a Number Value")
